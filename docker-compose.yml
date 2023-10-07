@@ -1,0 +1,22 @@
+version: '3.9'
+name: trending-bid-test
+services:
+
+  backend:
+    container_name: backend
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    environment:
+      - NODE_ENV=production
+      - APP_PORT=3000
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - 3000:3000
+    depends_on:
+      - redis
+
+  redis:
+    container_name: redis
+    image: redis:7.2.1-alpine
+    restart: always
