@@ -18,7 +18,7 @@ const redis = require('./redis/client');
 
 const app = express();
 
-app.use(bodyParser.json({ strict: false }));
+app.use(bodyParser.json());
 app.use(loggerMiddleware);
 
 require('./auth/auth.route')(app);
