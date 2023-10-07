@@ -10,10 +10,10 @@ module.exports = (error, req, res, next) => {
       .json({ success: false, message: error.message, errors: error.errors });
   }
 
-  if (error instanceof SyntaxError && "body" in error) {
+  if (error instanceof SyntaxError && 'body' in error) {
     return res
-    .status(StatusCodes.BAD_REQUEST)
-    .json({ success: false, message: httpErrorsCode.INVALID_JSON });
+      .status(StatusCodes.BAD_REQUEST)
+      .json({ success: false, message: httpErrorsCode.INVALID_JSON });
   }
 
   logger.error(error);
@@ -22,4 +22,4 @@ module.exports = (error, req, res, next) => {
     success: false,
     message: httpErrorsCode.INTERNAL_SERVER_ERROR,
   });
-}
+};

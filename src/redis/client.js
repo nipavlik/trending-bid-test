@@ -1,8 +1,8 @@
 const { createClient } = require('redis');
 
-const config = require('../config/config')
+const config = require('../config/config');
 
-const logger = require('../logger/logger')
+const logger = require('../logger/logger');
 
 const redisModule = (() => {
   let redisClient;

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const config = require('./config/config');
 
-const notFoundMiddleware = require('./middlewares/notFound.middleware copy');
+const notFoundMiddleware = require('./middlewares/notFound.middleware');
 const loggerMiddleware = require('./middlewares/logger.middleware');
 const errorHandlerMiddleware = require('./middlewares/errorHandler.middleware');
 
